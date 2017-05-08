@@ -32,9 +32,11 @@ public class BubbleSort {
 
 
         for (int i = 0; i < elements_array.length; i++) {
-            for (int j = i + 1; j < elements_array.length; j++) {
-                if (elements_array[i] > elements_array[j]) {
-                    doSwap(elements_array, i, j);
+            //why - i at the condition is because after each iteration with i, the largest number gets pushed to
+            // the end
+            for (int j = 0; j < elements_array.length - 1 - i; j++) {
+                if (elements_array[j] > elements_array[j + 1]) {
+                    doSwap(elements_array, j, j + 1);
                 }
             }
         }
