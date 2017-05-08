@@ -34,14 +34,12 @@ public class SelectionSort {
         for (int i = 0; i < elements_array.length; i++) {
             min = i;
             for (int j = i + 1; j < elements_array.length; j++) {
-
                 if (elements_array[j] < elements_array[min]) {
                     min = j;
                 }
             }
             doSwap(elements_array, i, min);
         }
-
         return elements_array;
     }
 
