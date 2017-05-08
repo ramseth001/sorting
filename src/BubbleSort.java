@@ -12,6 +12,7 @@ public class BubbleSort {
         while (sc.hasNext()) {
             elements.add(sc.nextInt());
         }
+        sc.close();
 
         int elements_array[] = new int[elements.size()];
 
@@ -29,19 +30,22 @@ public class BubbleSort {
 
     private static int[] doBubbleSort(int[] elements_array) {
 
-        int temp;
 
         for (int i = 0; i < elements_array.length; i++) {
             for (int j = i + 1; j < elements_array.length; j++) {
                 if (elements_array[i] > elements_array[j]) {
-                    temp = elements_array[i];
-                    elements_array[i] = elements_array[j];
-                    elements_array[j] = temp;
+                    doSwap(elements_array, i, j);
                 }
             }
         }
 
         return elements_array;
+    }
+
+    private static void doSwap(int[] elements_array, int i, int j) {
+        int temp = elements_array[i];
+        elements_array[i] = elements_array[j];
+        elements_array[j] = temp;
     }
 
 
